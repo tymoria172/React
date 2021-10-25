@@ -1,0 +1,12 @@
+.titulo{
+color: aqua;
+text-align: center;
+}
+
+.imagens {
+
+    width: 500px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+}
