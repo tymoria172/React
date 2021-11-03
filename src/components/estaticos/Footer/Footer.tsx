@@ -13,17 +13,17 @@ function Footer() {
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#D98F07", height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
+                            <Typography variant="h5" align="center" gutterBottom style={{ color: "#1C2226" }}>Siga-nos nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                                <FacebookIcon style={{ fontSize: 60, color: "white" }} />
+                            <a href="https://www.facebook.com/andre.ricardo.73997861/" target="_blank">
+                                <FacebookIcon style={{ fontSize: 60, color: "#1C2226" }} />
                             </a>
-                            <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                                <InstagramIcon style={{ fontSize: 60, color: "white" }} />
+                            <a href="https://www.instagram.com/andresep20/" target="_blank">
+                                <InstagramIcon style={{ fontSize: 60, color: "#1C2226" }} />
                             </a>
-                            <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
+                            <a href="https://www.linkedin.com/in/andre-ricardo21/" target="_blank">
+                                <LinkedInIcon style={{ fontSize: 60, color: "#1C2226" }} />
                             </a>
                         </Box>
                     </Box>
@@ -32,8 +32,8 @@ function Footer() {
                             <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2020 Copyright:</Typography>
                         </Box>
                         <Box>
-                            <a target="_blank" href="https://brasil.generation.org">
-                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">brasil.generation.org</Typography>
+                            <a target="_blank" href="">
+                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">Andre Ricardo de oliveira</Typography>
                             </a>
                         </Box>
                     </Box>

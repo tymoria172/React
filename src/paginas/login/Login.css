@@ -1,0 +1,35 @@
+ 
+ .text-decorator-none{
+text-decoration: none;
+color: #1C2226;
+ }
+
+.login{
+    
+    
+    background: #1C2226;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    }
+
+    .grid{
+
+        background: #1C2226;
+       
+    }
+
+.text{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #D98F07 !important;
+    margin: 100px;
+    padding: 10px;
+    align-items: center;
+}
+
+.corlog{
+
+    background-color: #41679B;
+}
