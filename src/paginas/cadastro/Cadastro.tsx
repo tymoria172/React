@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect, ChangeEvent} from 'react';
+import { useHistory } from 'react-router';
+import User from '../../models/User';
+import { cadastroUsuario } from '../../services/Service';
 import './Cadastro.css';
 import { Box, Container, Paper, Button, Typography, Grid, TextField } from "@material-ui/core";
 import { Link } from 'react-router-dom';
@@ -6,70 +9,133 @@ import PropTypes from 'prop-types';
 import { grid } from '@material-ui/system';
 
 function Cadastro() {
+
+    let history = useHistory();
+    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    const [user, setUser] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: ''
+        })
+
+    const [userResult, setUserResult] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: ''
+        })
+
+    useEffect(() => {
+        if (userResult.id != 0) {
+            history.push("/login")
+        }
+    }, [userResult])
+
+
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+        setConfirmarSenha(e.target.value)
+    }
+
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        })
+
+    }
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+        if(confirmarSenha == user.senha){
+        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+        alert('Usuario cadastrado com sucesso')
+        }else{
+            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+        }
+    }
+
     return (
 
         <Grid container direction='row' justifyContent='center' alignItems='center' className='corcad'>
-            <Grid  alignItems='center' xs={6}>
+            <Grid xs={6} style={{
+                backgroundImage: `url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png)`,
+                backgroundRepeat: 'no-repeat', width: '100vh', minHeight: '100vh', backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }}>
+            </Grid>
+            <Grid alignItems='center' xs={6}>
                 <Box paddingX={10}>
-                    <form >
+                    <form onSubmit={onSubmit} >
                         <Typography variant="h3" gutterBottom color="white" component='h3'
-                        align='center' style={{ fontWeight: 'bold'}}> Cadastrar </Typography>
+                            align='center' style={{ fontWeight: 'bold' }}> Cadastrar </Typography>
                         <TextField
-                          id="nome"
-                          label="nome"
-                          variant='standard'
-                          name='nome'
-                          margin='normal'
-                          fullWidth />
+                            value={user.nome}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id="nome"
+                            label="nome"
+                            variant='standard'
+                            name='nome'
+                            margin='normal'
+                            fullWidth />
                         <TextField
-                          id="usuario"
-                          label="usuário"
-                          variant='standard'
-                          name='usuário'
-                          margin='normal'
-                          type='email'
-                          fullWidth />
-                          <TextField
-                          id="senha"
-                          label="senha"
-                          variant='standard'
-                          name='senha'
-                          type='password'
-                          margin='normal'
-                          fullWidth />
-                         
-                          <Box marginTop={2} textAlign='center' >
-                             <Link to='/login' className='text-decorator-none'>
-                                <Button type='submit' variant='contained' style={{backgroundColor: '#1C2226'}}>
-                                 cadastrar
-                                </Button>
-                             </Link>
-                          </Box>
+                            value={user.usuario}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id="usuario"
+                            label="usuario"
+                            variant='standard'
+                            name='usuario'
+                            margin='normal'
+                            
+                            fullWidth />
+                        <TextField
+                            value={user.senha}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id="senha"
+                            label="senha"
+                            variant='standard'
+                            name='senha'
+                            type='password'
+                            margin='normal'
+                            fullWidth />
+                        <TextField
+                            value={confirmarSenha}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+                            id="confirmasenha"
+                            label="confirmarSenha"
+                            variant='standard'
+                            name='confirmasenha'
+                            type='password'
+                            margin='normal'
+                            fullWidth />
+
+                        <Box marginTop={2} textAlign='center'>
+
+                            <Button type='submit' variant='contained' style={{ backgroundColor: '#1C2226' }}>
+                                cadastrar
+                            </Button>
+                        </Box>
                     </form>
                     <Box display='flex' justifyContent='center' marginTop={2}>
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center' color='white'>
-                                ja tem uma conta?
-                                
+                                Já tem uma conta?
+
                             </Typography>
                         </Box>
-                        <a href="http://localhost:3000/login" className='text-decorator-none'>
-                        <Typography  variant='subtitle1' gutterBottom align='center' style={{fontWeight: 'bold'}}  color='white'> 
-                        Logar
-                        </Typography>
-                        </a>
+                        <Link to='/login' className='text-decorator-none'>
+                            <Typography variant='subtitle1' gutterBottom align='center' style={{ fontWeight: 'bold' }} color='white'>
+                                Logar
+                            </Typography>
+                        </Link>
                     </Box>
                 </Box>
             </Grid >
 
-            <Grid xs={6} style={{ 
-                backgroundImage:`url(https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png)`,
-                backgroundRepeat: 'no-repeat', width:'100vh', minHeight:'100vh', backgroundSize:'cover',
-                backgroundPosition:'center'
-            }}>
 
-
-            </Grid>
         </Grid>
     )
 }

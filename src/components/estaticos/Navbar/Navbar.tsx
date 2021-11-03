@@ -15,7 +15,9 @@ function Navbar() {
       <Box sx={{ flexGrow: 1 }} color="#1C2226">
         <AppBar position="static" className="corNav">
           <Toolbar>
-            <Box p={1}><img src="https://cdn-icons-png.flaticon.com/512/188/188954.png" alt="" width="50px" height="50px" /></Box>
+            <Link to='/home' className='text-decorator-none'>
+              <Box p={1}><img src="https://cdn-icons-png.flaticon.com/512/188/188954.png" alt="" width="50px" height="50px" /></Box>
+            </Link>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
               Pokemon Pedia
             </Typography>
