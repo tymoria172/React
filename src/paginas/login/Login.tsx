@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import './Login.css';
-import { Box, Container, Paper, Button, Typography, Grid, TextField } from "@material-ui/core";
+import { Box, Container, Paper, Button, Typography, Grid, TextField } from "@mui/material";
 import { Link, useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';

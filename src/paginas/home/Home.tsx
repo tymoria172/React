@@ -1,14 +1,15 @@
 import { homedir } from "os";
 import React from "react";
-import { Box, Container, Paper, Button, Typography, Grid} from "@material-ui/core";
+import { Box, Container, Paper, Button, Typography, Grid} from "@mui/material";
 import './Home.css';
+import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 
 function Home() {
     return (
         <>
               <Grid container direction="row" justifyContent="center" alignItems="center" className="coresb">
                 <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={20} >
+                    <Box paddingX={20}>
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "#1C2226", fontWeight: "bold" }}>Tipo Elétrico ⚡</Typography>
                         <Typography variant="h6" gutterBottom color="textPrimary" component="h6" align="center" style={{ color: "#1C2226", fontWeight: "bold" }}>Pokémon elétricos são um dos tipos mais fortes em Pokémon Go porque eles têm apenas uma fraqueza real (Pokémon terrestre). Seus ataques são potencializados pelo tempo chuvoso, então espere ver muitos outros treinadores usando-os se o tempo for previsível. </Typography>
                     </Box>
@@ -128,6 +129,7 @@ function Home() {
                    
                 </Grid>
                 <Grid xs={12} style={{ backgroundColor: "white" }}>
+                    <TabPostagem/>
                 </Grid>
             </Grid>
         </>

@@ -1,9 +1,5 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, Typography, Button, Box } from "@material-ui/core";
-import { Menu } from "@material-ui/icons";
-import { MenuItem } from "@material-ui/core";
-import { Icon } from "@material-ui/core";
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
+import { AppBar, Toolbar, Typography, Button, Box,  } from "@mui/material";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
@@ -18,7 +14,7 @@ function Navbar() {
             <Link to='/home' className='text-decorator-none'>
               <Box p={1}><img src="https://cdn-icons-png.flaticon.com/512/188/188954.png" alt="" width="50px" height="50px" /></Box>
             </Link>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} >
+             <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
               Pokemon Pedia
             </Typography>
             <Link to='/login' className='text-decorator-none'>

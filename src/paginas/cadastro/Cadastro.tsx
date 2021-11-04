@@ -3,10 +3,10 @@ import { useHistory } from 'react-router';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
 import './Cadastro.css';
-import { Box, Container, Paper, Button, Typography, Grid, TextField } from "@material-ui/core";
+import { Box, Container, Paper, Button, Typography, Grid, TextField } from "@mui/material";
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { grid } from '@material-ui/system';
+
+
 
 function Cadastro() {
 

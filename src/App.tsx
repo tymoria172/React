@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
 import Home from './paginas/home/Home';
-import { Grid } from '@material-ui/core';
+
 import Navbar from './components/estaticos/Navbar/Navbar';
 import Footer from './components/estaticos/Footer/Footer';
 import Login from './paginas/login/Login';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Cadastro from './paginas/cadastro/Cadastro';
-
-
-
+import ListaTema from './components/temas/listatemas/ListaTema';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 
 
 function App() {
@@ -29,6 +28,12 @@ function App() {
             </Route>
             <Route path='/cadastro'>
               <Cadastro/>
+            </Route>
+            <Route path='/temas'>
+              <ListaTema/>
+            </Route>
+            <Route path='/posts'>
+              <ListaPostagem/>
             </Route>
           </div>
       </Switch>
