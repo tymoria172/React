@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { AppBar, Tab, Tabs, Typography, Box } from '@material-ui/core';
-import { TabContext, TabPanel } from '@mui/lab';
 import ListaPostagem from '../listapostagem/ListaPostagem';
 import './TabPostagem.css';
+import { TabContext, TabPanel } from '@material-ui/lab';
 
 
 function TabPostagem() {
@@ -12,15 +12,16 @@ function TabPostagem() {
     }
   return (
     <>
-      <TabContext value={value}>
-        <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas as postagens" value="1"/>
-            <Tab label="Sobre-nós" value="2" />
+    <Box className="cor">
+    <TabContext value={value}>
+        <AppBar position="static" className="cor">
+          <Tabs centered onChange={handleChange} >
+            <Tab label="Todas as postagens" value="1" className="cor"/>
+            <Tab label="Sobre-nós" value="2" className="cor"/>
           </Tabs>
         </AppBar>
-        <TabPanel value="1" >
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
+        <TabPanel value="1" className="cor">
+          <Box display="flex" flexWrap="wrap" justifyContent="center" className="cor">
             <ListaPostagem />
           </Box>
         </TabPanel>
@@ -29,6 +30,8 @@ function TabPostagem() {
           <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
         </TabPanel>
       </TabContext>
+    </Box>
+     
     </>
   );
 }

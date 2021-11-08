@@ -3,10 +3,46 @@ import React from "react";
 import { Box, Container, Paper, Button, Typography, Grid} from "@mui/material";
 import './Home.css';
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
+import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
 
 function Home() {
     return (
-        <>
+        <>      
+        
+        <Grid container direction="row" justifyContent="center" alignItems="center" className="cor6">
+        <Grid alignItems="center" item xs={6}>
+            <Box paddingX={20}>
+                <Box> 
+                <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "#e0dfdf", fontWeight: "bold" }}>
+                <img src="https://cdn-icons-png.flaticon.com/512/188/188996.png" alt="" width="60px" height="60px" className='imagem'/>
+                 Dev Dex</Typography>
+               
+                </Box>
+               
+                <Typography variant="h6" gutterBottom color="textPrimary" component="h6" align="center" style={{ color: "#e0dfdf", fontWeight: "bold" }}>A Dev Dex é uma plataforma criada para juntar suas melhores Skills junto com as Tecnologias que mais combinam com ela, Fazendo com que você Dev consiga se encaixar melhor no seu estilo de codar </Typography>
+            </Box>
+            <Box display="flex" justifyContent="center">
+                <Box marginRight={1}>
+                    <ModalPostagem/>
+                </Box>
+            </Box>
+        </Grid>
+        <Grid item xs={6} container direction="row">
+            <Box p={1}>
+            <img src="https://www.papyswarriors.com/medias/images/pokedex-pokemon-go.png" alt="Eletric Pokemon" width="450px" height="450px" />
+            </Box>
+            
+           
+        </Grid>
+        <Grid xs={12} style={{ backgroundColor: "white" }}>
+        </Grid>
+    </Grid>
+
+
+
+
+
+
               <Grid container direction="row" justifyContent="center" alignItems="center" className="coresb">
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20}>
@@ -15,6 +51,7 @@ function Home() {
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
+                            <ModalPostagem/>
                         </Box>
                         <Button variant="outlined" style={{ borderColor: "#D98F07", backgroundColor: "#1C2226", color: "#D98F07" }}>Ver Pokemons</Button>
                     </Box>

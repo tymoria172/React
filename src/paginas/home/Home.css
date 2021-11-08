@@ -38,3 +38,14 @@ text-align: center;
 .cor5{
     background-color: #729F3F;
 }
+
+.cor6{
+    background-color: #1c2226;
+}
+
+.imagem{
+    margin-right: 5px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
