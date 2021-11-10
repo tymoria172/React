@@ -5,6 +5,7 @@ import { cadastroUsuario } from '../../services/Service';
 import './Cadastro.css';
 import { Box, Container, Paper, Button, Typography, Grid, TextField } from "@mui/material";
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 
@@ -52,9 +53,27 @@ function Cadastro() {
         e.preventDefault()
         if(confirmarSenha == user.senha){
         cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
+        toast.success('Usuario cadastrado com sucesso!!', {
+            position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+            toast.error('Dados do usuario inconsistentes. Por favor revisar a senha!!', {
+                position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
         }
     }
 

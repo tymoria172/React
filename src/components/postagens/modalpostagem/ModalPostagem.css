@@ -5,6 +5,12 @@
 
 .btnModal{
     border-color: white !important;
+    border-color: #F2D541;
+    background-color: aliceblue;
    
 }
 
+.btnpost{
+
+    border-color: #F2D541;
+}

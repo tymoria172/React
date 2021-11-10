@@ -42,7 +42,7 @@ function getModalStyle() {
     };
   
     const body = (
-      <div style={modalStyle} className={classes.paper} color='#1c2226'>
+      <div style={modalStyle} className={classes.paper} color='#F2D541'>
         <Box display="flex" justifyContent="flex-end" className="cursor">
           <CloseIcon onClick={handleClose}/>
         
@@ -56,7 +56,7 @@ function getModalStyle() {
     return (
       <div>
         <Button
-          variant="outlined"
+          variant="contained"
           className="btnModal"
           onClick={handleOpen}>Nova Postagem</Button>
         <Modal
