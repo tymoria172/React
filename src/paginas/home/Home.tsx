@@ -34,9 +34,10 @@ function Home() {
     }, [token])
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" className="cor6">
-                <Grid alignItems="center" item xs={6}>
-                    <Box paddingX={1}>
+       
+            <Grid container direction="row" justifyContent="center" alignItems="center" className="cor6 margin">
+                <Grid alignItems="center" item xs={6} className="margin">
+                    <Box paddingX={1} >
                         <Box>
                             <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "#e0dfdf", fontWeight: "bold" }}>
                                 <img src="https://cdn-icons-png.flaticon.com/512/188/188996.png" alt="" width="60px" height="60px" className='imagem' />Dev Dex</Typography>
@@ -60,6 +61,9 @@ function Home() {
                     <CarouselComponent />
                 </Box>
             </Grid>
+            <Grid xs={12} style={{ backgroundColor: "white" }}>
+                    <TabPostagem />
+                </Grid>
             <Grid container direction="row" justifyContent="center" alignItems="center" className="coresb">
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} marginTop='20px'>
@@ -158,9 +162,7 @@ function Home() {
                         <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/254.png" alt="Eletric Pokemon" width="450px" height="450px" />
                     </Box>
                 </Grid>
-                <Grid xs={12} style={{ backgroundColor: "white" }}>
-                    <TabPostagem />
-                </Grid>
+                
             </Grid>
         </>
     );

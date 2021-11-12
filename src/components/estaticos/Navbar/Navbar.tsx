@@ -36,7 +36,7 @@ function Navbar() {
 
   if (token != "") {
     navbarComponent = <Box sx={{ flexGrow: 1 }} color="#1C2226">
-      <AppBar position="static" className="corNav">
+      <AppBar position="absolute" className="corNav">
         <Toolbar>
 
           <Link to='/home' className='text-decorator-none'>

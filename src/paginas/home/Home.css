@@ -42,6 +42,7 @@ text-align: center;
 }
 
 .cor6{
+    
     background-color: #1c2226;
 }
 
@@ -68,4 +69,8 @@ text-align: center;
 .imageali{
 
     margin-left: 60px;
+}
+
+.margin{
+    margin-top: 70px;
 }
